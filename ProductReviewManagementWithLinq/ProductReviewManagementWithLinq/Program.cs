@@ -7,8 +7,9 @@ namespace ProductReviewManagementWithLinq
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to product review Management");
-            //UC1:-add
+            Console.WriteLine("****Welcome to product review Management****");
+            Console.WriteLine("=====================================================================");
+            //UC1:-Create variable for list of product Review  and Add 25 default values in list
             List<ProductReview> productReviewList = new List<ProductReview>()
             {
                 new ProductReview(){ProductID=1,UserID=1,Rating=5,Review="Good",isLike=true},
@@ -37,7 +38,7 @@ namespace ProductReviewManagementWithLinq
                 new ProductReview(){ProductID=24,UserID=10,Rating=2,Review="Bad",isLike=true},
                 new ProductReview(){ProductID=25,UserID=2,Rating=4,Review="Good",isLike=true},
             };
-
+            //print the list
             foreach (var list in productReviewList)
             {
                 Console.WriteLine("ProductID:-" + list.ProductID + " " + "UserID:-" + list.UserID
