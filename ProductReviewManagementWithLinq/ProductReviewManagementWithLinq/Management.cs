@@ -24,5 +24,21 @@ namespace ProductReviewManagementWithLinq
                     + " " + "Rating:-" + list.Rating + " " + "Review:-" + list.Review + " " + "isLike:-" + list.isLike);
             }
         }
+        /// <summary>
+        /// UC3:-method is use to Retrieve record from the list,rating > 3 and product ID is 1,4,9
+        /// </summary>
+        /// <param name="review"></param>
+        public void SelectedRecords(List<ProductReview> review)
+        {
+            var recordedData = from productReviews in review
+                               where (productReviews.ProductID == 1 || productReviews.ProductID == 4 || productReviews.ProductID == 9) 
+                               && productReviews.Rating > 3
+                               select productReviews;
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine("ProductID:-" + list.ProductID + " " + "UserID:-" + list.UserID
+                    + " " + "Rating:-" + list.Rating + " " + "Review:-" + list.Review + " " + "isLike:-" + list.isLike);
+            }
+        }
     }
 }

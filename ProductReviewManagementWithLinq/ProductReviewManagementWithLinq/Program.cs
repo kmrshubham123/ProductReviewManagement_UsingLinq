@@ -47,7 +47,10 @@ namespace ProductReviewManagementWithLinq
             //UC2:-Retrieve Top 3 records from the list who's rating is high 
             Management management = new Management();
             management.TopRecords(productReviewList);
-            
+            Console.WriteLine("=========================================");
+            //UC3:- Retrieve record from the list,rating > 3 and product ID is 1,4,9
+            management.SelectedRecords(productReviewList);
+
         }
     }
 }
