@@ -40,5 +40,19 @@ namespace ProductReviewManagementWithLinq
                     + " " + "Rating:-" + list.Rating + " " + "Review:-" + list.Review + " " + "isLike:-" + list.isLike);
             }
         }
+        /// <summary>
+        /// UC4:-Reterive Count of review present for each productID
+        /// </summary>
+        /// <param name="review"></param>
+        public void RetrieveCountOfRecords(List<ProductReview> review)
+        {
+            //Groupby:-Group the element of a sequence according to a specified key selector function
+            //Select:-Projects Each element of a sequence into a new form
+            var recordedData = review.GroupBy(x => x.ProductID).Select(x => new { ProductID = x.Key, Count = x.Count() });
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine(list.ProductID + "==>" + list.Count);
+            }
+        }
     }
 }
