@@ -12,8 +12,8 @@ namespace ProductReviewManagementWithLinq
             //UC1:-Create variable for list of product Review  and Add 25 default values in list
             List<ProductReview> productReviewList = new List<ProductReview>()
             {
-                new ProductReview(){ProductID=1,UserID=1,Rating=5,Review="Good",isLike=true},
-                new ProductReview(){ProductID=2,UserID=1,Rating=4,Review="Good",isLike=true},
+                new ProductReview(){ProductID=1,UserID=1,Rating=9,Review="Good",isLike=true},
+                new ProductReview(){ProductID=2,UserID=3,Rating=8,Review="Good",isLike=true},
                 new ProductReview(){ProductID=3,UserID=2,Rating=5,Review="Good",isLike=true},
                 new ProductReview(){ProductID=4,UserID=2,Rating=4,Review="Good",isLike=true},
                 new ProductReview(){ProductID=5,UserID=3,Rating=2,Review="nice",isLike=false},
@@ -36,14 +36,18 @@ namespace ProductReviewManagementWithLinq
                 new ProductReview(){ProductID=22,UserID=10,Rating=3,Review="nice",isLike=true},
                 new ProductReview(){ProductID=23,UserID=10,Rating=3,Review="nice",isLike=true},
                 new ProductReview(){ProductID=24,UserID=10,Rating=2,Review="Bad",isLike=true},
-                new ProductReview(){ProductID=25,UserID=2,Rating=4,Review="Good",isLike=true},
+                new ProductReview(){ProductID=25,UserID=2,Rating=10,Review="Good",isLike=true},
             };
             //print the list
-            foreach (var list in productReviewList)
-            {
-                Console.WriteLine("ProductID:-" + list.ProductID + " " + "UserID:-" + list.UserID
-                    + " " + "Rating:-" + list.Rating + " " + "Review:-" + list.Review + " " + "isLike:-" + list.isLike);
-            }
+            //foreach (var list in productReviewList)
+            //{
+            //    Console.WriteLine("ProductID:-" + list.ProductID + " " + "UserID:-" + list.UserID
+            //        + " " + "Rating:-" + list.Rating + " " + "Review:-" + list.Review + " " + "isLike:-" + list.isLike);
+            //}
+            //UC2:-Retrieve Top 3 records from the list who's rating is high 
+            Management management = new Management();
+            management.TopRecords(productReviewList);
+            
         }
     }
 }
