@@ -50,9 +50,12 @@ namespace ProductReviewManagementWithLinq
             Console.WriteLine("=========================================");
             //UC3:- Retrieve record from the list,rating > 3 and product ID is 1,4,9
             management.SelectedRecords(productReviewList);
-            Console.WriteLine("=========================================");
             //UC4:-Count of review present for each productID
+            Console.WriteLine("======================COUNT===================");
             management.RetrieveCountOfRecords(productReviewList);
+            //UC5:-Reterive Only ProductID and review
+            Console.WriteLine("============ Reterive Only ProductID and review ===============");
+            management.RetrieveOnlyProductIdAndReview(productReviewList);
 
 
         }
