@@ -59,9 +59,9 @@ namespace ProductReviewManagementWithLinq
             // UC6:-Skip top 5 records from the list
             Console.WriteLine("===============================================");
             management.SkipTopFiveRecords(productReviewList);
-
-
-
+            //UC7:-Retrive ProductID and review from the list
+            Console.WriteLine("===============================================");
+            management.SelectIdAndReview(productReviewList);
         }
     }
 }
