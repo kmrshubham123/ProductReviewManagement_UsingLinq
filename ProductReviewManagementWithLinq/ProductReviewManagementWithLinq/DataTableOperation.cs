@@ -73,6 +73,21 @@ namespace ProductReviewManagementWithLinq
                            select (product.Field<float>("Rating"))).Average();   //Field:-Provides strongly-typed access to each of the column values in the specified row
             Console.WriteLine("Average Rating of productId "+average);
         }
-      
+        /// <summary>
+        /// UC11:-Retreive all records from the list who's review message contain "nice"
+        /// </summary>
+        /// <param name="dataTable"></param>
+        public void ReviewIsNice(DataTable dataTable)
+        {
+            var records = from product in dataTable.AsEnumerable().Where(x => x["Review"].ToString().Contains("nice")) select product;
+            foreach (var product in records)
+            {
+
+                Console.WriteLine("ProductID : " + product.Field<int>("ProductID") + " " + "UserID : " + product.Field<int>("UserID") + " " + "Rating : " + product.Field<float>("Rating") + " " + "Review : " + product.Field<string>("Review") + " " + "IsLike : " + product.Field<bool>("IsLike"));
+                
+            }
+
+        }
+
     }
 }

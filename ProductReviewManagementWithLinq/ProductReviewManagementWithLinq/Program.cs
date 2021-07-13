@@ -71,6 +71,10 @@ namespace ProductReviewManagementWithLinq
             //UC10:-average rating of each ProductId
             Console.WriteLine("=================================================");
             dataTable.AverageRatingProductID(table);
+            //UC11:-Retreive all records from the list who's review message contain "nice"
+            Console.WriteLine("==============review message contain _nice_===================");
+            dataTable.ReviewIsNice(table);
+
 
         }
     }
