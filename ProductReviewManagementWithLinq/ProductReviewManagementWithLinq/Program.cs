@@ -74,6 +74,9 @@ namespace ProductReviewManagementWithLinq
             //UC11:-Retreive all records from the list who's review message contain "nice"
             Console.WriteLine("==============review message contain _nice_===================");
             dataTable.ReviewIsNice(table);
+            //UC12:-Reterive all the records from the list who's Userid is 10 and order by Rating
+            Console.WriteLine("=================================================");
+            dataTable.RetrievParticularUserID(table);
 
 
         }
