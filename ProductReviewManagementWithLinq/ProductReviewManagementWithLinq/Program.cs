@@ -68,6 +68,9 @@ namespace ProductReviewManagementWithLinq
             DataTableOperation dataTable = new DataTableOperation();
             DataTable table = dataTable.CreateDataTable();
             dataTable.DisplayIsLikeValueTrue(table);
+            //UC10:-average rating of each ProductId
+            Console.WriteLine("=================================================");
+            dataTable.AverageRatingProductID(table);
 
         }
     }

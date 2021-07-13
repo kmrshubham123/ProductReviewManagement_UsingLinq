@@ -46,9 +46,14 @@ namespace ProductReviewManagementWithLinq
             table.Rows.Add(24, 136, 6, "Good", false);
             table.Rows.Add(25, 179, 2, "bad", true);
             return table;
-        }     
+        }
+        /// <summary>
+        /// UC9:-Reterive all the record from the dataTable variable who's Like value is true
+        /// </summary>
+        /// <param name="table"></param>
         public void DisplayIsLikeValueTrue(DataTable table)
         {
+            //To cast a specific type(DataTable) to its IEnumerable(interface with Linq query) equivalent, use the AsEnumerable() method,also it is an extension method.
             var records = from products in table.AsEnumerable().Where(x => x["isLike"].Equals(true)) select products;
 
             Console.WriteLine("List of IsLike value in Data");
@@ -58,5 +63,16 @@ namespace ProductReviewManagementWithLinq
              
             }
         }
+        /// <summary>
+        /// UC10:-Average Rating of Each ProductId
+        /// </summary>
+        /// <param name="dataTable"></param>
+        public void AverageRatingProductID(DataTable dataTable)
+        {
+            var average = (from product in dataTable.AsEnumerable()
+                           select (product.Field<float>("Rating"))).Average();   //Field:-Provides strongly-typed access to each of the column values in the specified row
+            Console.WriteLine("Average Rating of productId "+average);
+        }
+      
     }
 }
