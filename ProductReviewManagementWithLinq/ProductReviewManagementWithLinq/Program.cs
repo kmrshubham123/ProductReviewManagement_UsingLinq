@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace ProductReviewManagementWithLinq
 {
@@ -62,6 +63,12 @@ namespace ProductReviewManagementWithLinq
             //UC7:-Retrive ProductID and review from the list
             Console.WriteLine("===============================================");
             management.SelectIdAndReview(productReviewList);
+            //UC9:-Reterive all the record from the dataTable variable who's Like value is true
+            Console.WriteLine("=================================================");
+            DataTableOperation dataTable = new DataTableOperation();
+            DataTable table = dataTable.CreateDataTable();
+            dataTable.DisplayIsLikeValueTrue(table);
+
         }
     }
 }
